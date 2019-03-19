@@ -1,6 +1,6 @@
 NAME = Puiss4MinMax
 
-CC = gpp
+CC = g++
 
 SRC = grille.cpp
 
@@ -11,13 +11,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) -o $(NAME)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean: 
 	$(RM) $(OBJS)
-
-fclean: clean
-	$(RM) 
 
 fclean: clean
 	$(RM) $(NAME)
