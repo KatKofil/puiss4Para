@@ -1,6 +1,5 @@
 #include <cstddef>
 #include <iostream>
-
 #define COL 3
 #define LINE 4
 
@@ -50,5 +49,13 @@ class plateau{
 
 
 int main(){
+
+	plateau game;
+	game.play(1);
+	game.getPlayer();
+	game.display();
+	game.end();
+
+	return 0;
   
 }
