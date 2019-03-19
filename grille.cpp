@@ -29,14 +29,14 @@ class plateau{
   }
 
   void display(){
-    for (int j = LINE; j > -1; j--){
+    for (int j = LINE; j > 0; j--){
       for (int i = 0; i < COL; i++){
         if (grid[j][i] == player)
           std::cout << "x";
         else if (grid[j][i] == ~player)
           std::cout << "O";
         else
-          std::cout << "_";
+          std::cout << ".";
       }
       std::cout  << "\n";
     }
