@@ -4,13 +4,13 @@ CC = g++
 
 SRC = grille.cpp
 
-FLAGS = -Wall -Werror -Wextra -g -O3 -std=c++17
+FLAGS = -Wall -Werror -Wextra -g -fsanitize=address -std=c++17
 
 RM = rm -f
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean: 
