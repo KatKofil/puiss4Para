@@ -1,8 +1,33 @@
 #include <cstddef>
 #include <iostream>
+#include <vector>
 #define COL 4
 #define LINE 4
 #define nbre_jeton 3
+
+
+
+class minMax{
+  public:
+  std::vector<int> play;
+
+
+  void playout(std::byte grid[LINE][COL]){
+    play.clear();
+    for (int i = 0; i < COL; i++){
+      if (grid[LINE - 1][i] == std::byte{0}){
+        play.push_back(i);
+      }
+    }
+  }
+
+  void displayPlayout(){
+    for (int i : play){
+      std::cout << i + 1 << " ";
+    }
+    std::cout << "\n";
+  }
+};
 
 
 class plateau{
@@ -104,6 +129,7 @@ class plateau{
 int main(){
   int collum = 0;
 	plateau game;
+  minMax bot;
 
   while(1){
     while (collum < 1 || collum > COL){
@@ -116,6 +142,8 @@ int main(){
       std::cout << "Enter a valid collum : ";
       std::cin >> collum;
     }
+    bot.playout(game.grid);
+    bot.displayPlayout();
     collum = 0;
     game.display();
   }
