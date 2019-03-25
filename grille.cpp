@@ -102,16 +102,15 @@ class plateau{
 
 
 int main(){
-
+  int collum = 0;
 	plateau game;
-  game.play(2);
-  game.play(2);
-  game.play(2);
-  game.play(2);
-  game.play(0);
-  game.play(0);
-  game.play(1);
-  game.play(1);
+
+  while(game.end() != 1){
+    std::cout << "Enter a collum :";
+    std::cin >> collum;
+    game.play(collum);
+    game.display();
+  }
   game.verification();
   game.getPlayer();
   game.display();
