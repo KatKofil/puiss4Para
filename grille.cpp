@@ -1,6 +1,6 @@
 #include <cstddef>
 #include <iostream>
-#define COL 3
+#define COL 4
 #define LINE 4
 #define nbre_jeton 3
 
@@ -56,7 +56,7 @@ class plateau{
 
   int end(){
     for (int i = 0; i < COL; i++){
-      if (grid[0][i] == std::byte{0})
+      if (grid[LINE - 1][i] == std::byte{0})
         return 0;
     }
     return 1;
@@ -105,16 +105,19 @@ int main(){
   int collum = 0;
 	plateau game;
 
-  while(game.end() != 1){
-    std::cout << "Enter a collum :";
-    std::cin >> collum;
-    game.play(collum);
+  while(1){
+    while (collum < 1 || collum > COL){
+      std::cout << "Enter a collum : ";
+      std::cin >> collum;
+    }
+    if (game.end() == 1)
+      return 0;
+    while (game.play(collum - 1) != 1){
+      std::cout << "Enter a valid collum : ";
+      std::cin >> collum;
+    }
+    collum = 0;
     game.display();
   }
-  game.verification();
-  game.getPlayer();
-  game.display();
-  game.end();
-
   return 0; 
 }
