@@ -3,11 +3,11 @@
 #include <vector>
 #define COL 4
 #define LINE 4
-#define nbre_jeton 3
+#define WIN 3
 
 
 
-class minMax{
+class MCTS{
   public:
   std::vector<int> play;
 
@@ -20,6 +20,8 @@ class minMax{
       }
     }
   }
+
+  
 
   void displayPlayout(){
     for (int i : play){
@@ -86,50 +88,13 @@ class plateau{
     }
     return 1;
   }
-
-  int verification(){
-    int y = last_y;
-    int x = last_x;
-    int acc1 = 0;
-    int acc2 = 0;
-    int i;
-    int j; 
-
-    // recule jusqua la fin de la grille (rembobine)
-    while( x > 0 || grid[y][x - 1]!= player){
-      grid[y][x] = grid[y][x - 1];
-      x--;
-    }
-    // verification horizontale 
-    for(j = y; j < nbre_jeton; j++){
-      for(i = x; x < nbre_jeton; i++){
-        if(grid[j][i] == std::byte{1} &&  x < COL){
-          acc1 +=1;
-          acc2 = 0;
-          x++;
-        }
-        if(grid[j][i] == std::byte{254} && x < COL){ 
-          acc2 += 1;
-          acc1 = 0;
-          x++;   
-        }
-      }
-    }
-    if(acc1 != nbre_jeton && acc2 != nbre_jeton){
-      return 0;
-    } 
-    if(acc1 == nbre_jeton || acc2 == nbre_jeton){
-      return 1;
-    }
-    return acc1;
-  }
 };
 
 
 int main(){
   int collum = 0;
 	plateau game;
-  minMax bot;
+  MCTS bot;
 
   while(1){
     while (collum < 1 || collum > COL){
