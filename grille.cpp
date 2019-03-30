@@ -163,7 +163,6 @@ class plateau{
 			j--;
 			i++;
 		}
-		printf("%d\n",acc);
 		return acc;
 	}
 
