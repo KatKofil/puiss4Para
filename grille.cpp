@@ -166,34 +166,31 @@ class plateau{
 		return acc;
 	}
 
-	int who_win(int acc){
+  std::byte who_win(int acc){
 		if(acc == WIN){
-			if(grid[last_y][last_x] == std::byte{1}){
-				std::cout << "Joueur 1 a gagner\n";
-				return 1;
-			}
-			if(grid[last_y][last_x] == std::byte{254}){
-				std::cout << "Joueur 2 a gagner\n";
-				return 1;
-			}
+			if(grid[last_y][last_x] == std::byte{1})
+				return std::byte{1};
+			if(grid[last_y][last_x] == std::byte{254})
+				return std::byte{254};
 		}
-		return 0;
+		return std::byte{0};
 	}
-	int verification(){
-		
-		if(who_win(verification_horizontal())){
-			return 1;
-		}	
-		if(who_win(verification_vertical())){
-			return 1;
-		}
-		if(who_win(verification_diagonal_gd())){
-			return 1;
-		}
-		if(who_win(verification_diagonal_dg())){
-			return 1;
-		}
-		return 0;
+
+  std::byte verification(){
+    std::byte horizon = who_win(verification_horizontal());
+    std::byte vertical = who_win(verification_vertical());
+    std::byte diag_gd = who_win(verification_diagonal_gd());
+    std::byte diag_dg = who_win(verification_diagonal_dg());
+
+		if(horizon != std::byte{0})
+			return horizon;
+		if(vertical != std::byte{0})
+			return vertical;
+		if(diag_gd != std::byte{0})
+			return diag_gd;
+		if(diag_dg != std::byte{0})
+			return diag_dg;
+		return std::byte{0};
 	}
 };
 
@@ -219,7 +216,7 @@ int main(){
 		bot.displayPlayout();
 		collum = 0;
 		game.display();
-		if(game.verification() == 1){
+		if(game.verification() != std::byte{0}){
 			break;
 		} 
 	}
