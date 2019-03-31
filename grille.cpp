@@ -1,16 +1,16 @@
 #include <cstddef>
 #include <iostream>
 #include <vector>
-#define COL 4
+#define COL 7
 #define LINE 4
 #define WIN 3
-
+#define ITE 1000
 
 
 class MCTS{
 public:
 	std::vector<int> play;
-
+  std::vector<std::vector<int>> result; 
 
 	void playout(std::byte grid[LINE][COL]){
 		play.clear();
@@ -20,6 +20,31 @@ public:
 			}
 		}
 	}
+
+  void init(std::byte grid[LINE][COL]){
+    playout(grid);
+    int nb_thread = play.size();
+    for (int j = 0; j < nb_thread; j++){
+      result.push_back(std::vector<int>());
+    }
+    for (int i = 0; i < COL; i++){
+      result[i].push_back(0);
+      result[i].push_back(0);
+      result[i].push_back(0);
+    }
+    for(int j = 0; j < COL; j++){
+      for (int i = 0; i < 3; i++){
+        std::cout << result[j][i] << " ";
+      }
+      std::cout << "\n";
+    }
+  }
+
+  void MC(std::byte grid[LINE][COL]){
+    for (int i = 0; i < ITE; i++){
+
+    }
+  }
 
 	void displayPlayout(){
 		for (int i : play){
@@ -195,7 +220,9 @@ int main(){
 	plateau game;
 	MCTS bot;
 
-	while(1){
+  bot.init(game.grid);
+  return 0; 
+  while(1){
 		while (collum < 1 || collum > COL){
 			std::cout << "Enter a collum : ";
 			std::cin >> collum;
