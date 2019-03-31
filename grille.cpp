@@ -197,6 +197,7 @@ class plateau{
 
 int main(){
 	int collum = 0;
+  std::byte winner;
 	plateau game;
 	MCTS bot;
 
@@ -216,7 +217,9 @@ int main(){
 		bot.displayPlayout();
 		collum = 0;
 		game.display();
-		if(game.verification() != std::byte{0}){
+    winner = game.verification();
+		if(winner != std::byte{0}){
+      std::cout << "Le winner est " << (int)winner << "\n";
 			break;
 		} 
 	}
