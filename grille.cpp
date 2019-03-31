@@ -21,8 +21,6 @@ public:
 		}
 	}
 
-
-
 	void displayPlayout(){
 		for (int i : play){
 			std::cout << i + 1 << " ";
@@ -60,7 +58,6 @@ class plateau{
 		player = ~player;
 		last_x = x;
 		last_y = 0;
-
 		return 1;
 	}
 
@@ -96,9 +93,8 @@ class plateau{
 		int acc = 0;
 		int i = x;
 
-		while(i < COL && grid[y][i] == ~player){
+		while(i < COL && grid[y][i] == ~player)
 			i++;
-		}
 		i--;
 		while(i >= 0 && grid[y][i] == ~player){
 			acc ++;
@@ -114,9 +110,8 @@ class plateau{
 		int acc = 0;
 		int j = y;
 
-		while(j < LINE && grid[j][x] == ~player){
+		while(j < LINE && grid[j][x] == ~player)
 			j++;
-		}
 		j--;
 		while(j >= 0 && grid[j][x] == ~player){
 			acc ++;
@@ -142,7 +137,6 @@ class plateau{
 			j--;
 			i--;
 		}
-
 		return acc;
 	}
 
