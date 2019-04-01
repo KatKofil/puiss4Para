@@ -1,94 +1,33 @@
-#include <cstddef>
-#include <iostream>
-#include <vector>
-#define COL 7
-#define LINE 4
-#define WIN 3
-#define ITE 1000
+#include "grille.hpp"
+#include "MCTS.hpp"
 
 
-class MCTS{
-public:
-	std::vector<int> play;
-  std::vector<std::vector<int>> result; 
-
-	void playout(std::byte grid[LINE][COL]){
-		play.clear();
-		for (int i = 0; i < COL; i++){
-			if (grid[LINE - 1][i] == std::byte{0}){
-				play.push_back(i);
-			}
+int plateau::play(int x)
+	int y = LINE - 1;
+	if (grid[y][x] != std::byte{0})
+		return 0;
+	--y;
+	while (y != -1){
+		if (grid[y][x] != std::byte{0}){
+			grid[y + 1][x] = player;
+			player = ~player;
+			last_x = x;
+			last_y = y + 1;
+			return 1;
 		}
+		y--;
 	}
+   // cas ou la colone est vide (premier pion de la colone)
+	grid[0][x] = player;
+	player = ~player;
+	last_x = x;
+	last_y = 0;
+	return 1;
+}
 
-  void init(std::byte grid[LINE][COL]){
-    playout(grid);
-    int nb_thread = play.size();
-    for (int j = 0; j < nb_thread; j++){
-      result.push_back(std::vector<int>());
-    }
-    for (int i = 0; i < COL; i++){
-      result[i].push_back(0);
-      result[i].push_back(0);
-      result[i].push_back(0);
-    }
-    for(int j = 0; j < COL; j++){
-      for (int i = 0; i < 3; i++){
-        std::cout << result[j][i] << " ";
-      }
-      std::cout << "\n";
-    }
-  }
-
- /* void MC(std::byte grid[LINE][COL]){
-    for (int i = 0; i < ITE; i++){
-
-    }
-  }*/
-
-	void displayPlayout(){
-		for (int i : play){
-			std::cout << i + 1 << " ";
-		}
-		std::cout << "\n";
-	}
-};
-
-
-class plateau{
-	public :
-	std::byte player = std::byte{1};
-	std::byte grid[LINE][COL] = {std::byte{0}};
-	int last_x;
-	int last_y;
-
-
-	int play(int x){
-		int y = LINE - 1;
-		if (grid[y][x] != std::byte{0})
-			return 0;
-		--y;
-		while (y != -1){
-			if (grid[y][x] != std::byte{0}){
-				grid[y + 1][x] = player;
-				player = ~player;
-				last_x = x;
-				last_y = y + 1;
-				return 1;
-			}
-			y--;
-		}
-    // cas ou la colone est vide (premier pion de la colone)
-		grid[0][x] = player;
-		player = ~player;
-		last_x = x;
-		last_y = 0;
-		return 1;
-	}
-
-	std::byte getPlayer(){
-		return player;
-	}
+std::byte plateau::getPlayer(){
+	return player;
+}
 
 	void display(){
 		for (int j = LINE - 1; j >= 0; j--){
