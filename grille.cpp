@@ -40,11 +40,11 @@ public:
     }
   }
 
-  void MC(std::byte grid[LINE][COL]){
+ /* void MC(std::byte grid[LINE][COL]){
     for (int i = 0; i < ITE; i++){
 
     }
-  }
+  }*/
 
 	void displayPlayout(){
 		for (int i : play){
@@ -210,6 +210,11 @@ class plateau{
 		if(diag_dg != std::byte{0})
 			return diag_dg;
 		return std::byte{0};
+	}
+
+
+	void upload(std::byte grid[LINE][COL]){
+		
 	}
 };
 
