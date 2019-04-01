@@ -1,12 +1,7 @@
 #include "grille.hpp"
 
 
-class MCTS{
-public:
-	std::vector<int> play;
-  std::vector<std::vector<int>> result; 
-
-	void playout(std::byte grid[LINE][COL]){
+	void MCTS::playout(std::byte grid[LINE][COL]){
 		play.clear();
 		for (int i = 0; i < COL; i++){
 			if (grid[LINE - 1][i] == std::byte{0}){
@@ -15,7 +10,7 @@ public:
 		}
 	}
 
-  void init(std::byte grid[LINE][COL]){
+  void MCTS::init(std::byte grid[LINE][COL]){
     playout(grid);
     int nb_thread = play.size();
     for (int j = 0; j < nb_thread; j++){
@@ -40,10 +35,10 @@ public:
     }
   }*/
 
-	void displayPlayout(){
+	void MCTS::displayPlayout(){
 		for (int i : play){
 			std::cout << i + 1 << " ";
 		}
 		std::cout << "\n";
 	}
-};
+

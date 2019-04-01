@@ -2,7 +2,7 @@
 #include "MCTS.hpp"
 
 
-int plateau::play(int x)
+int plateau::play(int x){
 	int y = LINE - 1;
 	if (grid[y][x] != std::byte{0})
 		return 0;
@@ -29,7 +29,7 @@ std::byte plateau::getPlayer(){
 	return player;
 }
 
-	void display(){
+	void plateau ::display(){
 		for (int j = LINE - 1; j >= 0; j--){
 			for (int i = 0; i < COL; i++){
 				if (grid[j][i] == std::byte{254})
@@ -43,7 +43,7 @@ std::byte plateau::getPlayer(){
 		}
 	}
 
-	int end(){
+	int plateau::end(){
 		for (int i = 0; i < COL; i++){
 			if (grid[LINE - 1][i] == std::byte{0})
 				return 0;
@@ -51,7 +51,7 @@ std::byte plateau::getPlayer(){
 		return 1;
 	}
 
-	int verification_horizontal(){
+	int plateau::verification_horizontal(){
 		int y = last_y;
 		int x = last_x;
 		int acc = 0;
@@ -68,7 +68,7 @@ std::byte plateau::getPlayer(){
 
 	}
 
-	int verification_vertical(){
+	int plateau::verification_vertical(){
 		int y = last_y;
 		int x = last_x;
 		int acc = 0;
@@ -84,7 +84,7 @@ std::byte plateau::getPlayer(){
 		return acc;
 	}
 
-	int verification_diagonal_gd(){
+	int plateau::verification_diagonal_gd(){
 		int y = last_y;
 		int x = last_x;
 		int acc = 0;
@@ -104,7 +104,7 @@ std::byte plateau::getPlayer(){
 		return acc;
 	}
 
-	int verification_diagonal_dg(){
+	int plateau::verification_diagonal_dg(){
 		int y = last_y;
 		int x = last_x;
 		int i = x;
@@ -124,7 +124,7 @@ std::byte plateau::getPlayer(){
 		return acc;
 	}
 
-  std::byte who_win(int acc){
+  std::byte plateau::who_win(int acc){
 		if(acc == WIN){
 			if(grid[last_y][last_x] == std::byte{1})
 				return std::byte{1};
@@ -134,7 +134,7 @@ std::byte plateau::getPlayer(){
 		return std::byte{0};
 	}
 
-  std::byte verification(){
+  std::byte plateau::verification(){
     std::byte horizon = who_win(verification_horizontal());
     std::byte vertical = who_win(verification_vertical());
     std::byte diag_gd = who_win(verification_diagonal_gd());
@@ -152,10 +152,7 @@ std::byte plateau::getPlayer(){
 	}
 
 
-	void upload(std::byte grid[LINE][COL]){
-		
-	}
-};
+
 
 
 int main(){

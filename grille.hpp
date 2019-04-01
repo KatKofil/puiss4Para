@@ -13,7 +13,7 @@ class plateau{
     int verification_vertical();
     int verification_diagonal_gd();
     int verification_diagonal_dg();
-    std::byte who_win();
+    std::byte who_win(int acc);
     std::byte verification();
     void upload(std::byte grid[LINE][COL]);
 
