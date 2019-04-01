@@ -1,5 +1,5 @@
 #include "grille.hpp"
-
+#include "MCTS.hpp"
 
 	void MCTS::playout(std::byte grid[LINE][COL]){
 		play.clear();
@@ -41,4 +41,3 @@
 		}
 		std::cout << "\n";
 	}
-

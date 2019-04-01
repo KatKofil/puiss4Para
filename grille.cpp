@@ -29,7 +29,7 @@ std::byte plateau::getPlayer(){
 	return player;
 }
 
-	void plateau ::display(){
+	void plateau::display(){
 		for (int j = LINE - 1; j >= 0; j--){
 			for (int i = 0; i < COL; i++){
 				if (grid[j][i] == std::byte{254})
@@ -162,7 +162,6 @@ int main(){
 	MCTS bot;
 
   bot.init(game.grid);
-  return 0; 
   while(1){
 		while (collum < 1 || collum > COL){
 			std::cout << "Enter a collum : ";
