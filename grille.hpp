@@ -17,8 +17,8 @@ class plateau{
     std::byte verification();
     void upload(std::byte grid[LINE][COL]);
 
-    std::byte player;
-    std::byte grid[LINE][COL];
+    std::byte player = std::byte{1};
+    std::byte grid[LINE][COL] = {std::byte{0}};
     int last_x;
     int last_y;
 

@@ -2,7 +2,7 @@ NAME = Puiss4MinMax
 
 CC = g++
 
-SRC = grille.cpp MCTS.cpp
+SRC = grille.cpp MCTS.cpp main.cpp
 
 FLAGS = -Wall -Werror -Wextra -g -fsanitize=address -std=c++17
 
