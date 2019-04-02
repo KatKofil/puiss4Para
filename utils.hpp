@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <iostream>
 #include <vector>
+#include <cstring>
 
 #define COL 7
 #define LINE 4

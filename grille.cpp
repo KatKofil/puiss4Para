@@ -150,3 +150,8 @@ std::byte plateau::getPlayer(){
 			return diag_dg;
 		return std::byte{0};
 	}
+	void plateau:: upload(std::byte grid[LINE][COL]){
+		std::byte copie[LINE][COL];
+
+		nempcy(copie,grid,sizeof(copie));
+	}
