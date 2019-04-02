@@ -1,5 +1,6 @@
 #include "grille.hpp"
 #include "MCTS.hpp"
+#include "node.hpp"
 
 int main(){
 	int collum = 0;
