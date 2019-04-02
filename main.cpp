@@ -3,9 +3,11 @@
 #include "node.hpp"
 
 int main(){
+	
 	int collum = 0;
   std::byte winner;
 	plateau game;
+  
   MCTS bot;
 
   bot.init(game.grid);

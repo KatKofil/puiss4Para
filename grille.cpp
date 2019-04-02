@@ -151,7 +151,7 @@ std::byte plateau::getPlayer(){
 		return std::byte{0};
 	}
 	void plateau:: upload(std::byte grid[LINE][COL]){
-		std::byte copie[LINE][COL];
+		//std::byte copie[LINE][COL];
 
-		memcpy(copie,grid,sizeof(copie));
+		memcpy(this->grid,grid,sizeof(std::byte[LINE][COL]));
 	}
