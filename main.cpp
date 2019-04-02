@@ -4,13 +4,16 @@
 
 int main(){
 	
-	int collum = 0;
-  std::byte winner;
+	//int collum = 0;
+  //std::byte winner;
 	plateau game;
   
   MCTS bot;
 
-  bot.init(game.grid);
+  Node tree;
+
+  tree.create_succes(3);
+  /*
   while(1){
 		while (collum < 1 || collum > COL){
 			std::cout << "Enter a collum : ";
@@ -31,5 +34,6 @@ int main(){
 			break;
 		} 
 	}
+  */
 	return 0; 
 }

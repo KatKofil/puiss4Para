@@ -57,18 +57,19 @@ void Node::supprSucces(){
   succes = ppN_NULL;
 }
 
+
 void Node::create_succes(int _nbSucces){
   Node::initSucces(_nbSucces);
-  for (int i = 0; i < _nbSucces; i++){
+  /*for (int i = 0; i < _nbSucces; i++){
     succes[i] = new Node;
     succes[i]->parent = this;
     succes[i]->cal_level();
-  }
+  }*/
 }
 
 void Node::suppr_node_succes(){
-  for (int i = 0; i < nbSucces; i++){
+/*  for (int i = 0; i < nbSucces; i++){
     delete succes[i];
   }
-  supprSucces();
+  supprSucces();*/
 }
