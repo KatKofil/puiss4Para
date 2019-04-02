@@ -43,7 +43,32 @@ void Node::display_arbre(){
     Node::succes[i]->display_arbre();
 }
 
-void initSucces(int _nbSucces){
-  if (succes != pN_NULL)
+void Node::initSucces(int _nbSucces){
+  if (succes != ppN_NULL)
+    delete []succes;
+  nbSucces = _nbSucces;
+  succes = new pNode[nbSucces];
+}
 
+void Node::supprSucces(){
+  if (succes != ppN_NULL)
+    Node::suppr_node_succes();
+  nbSucces = 0;
+  succes = ppN_NULL;
+}
+
+void Node::create_succes(int _nbSucces){
+  Node::initSucces(_nbSucces);
+  for (int i = 0; i < _nbSucces; i++){
+    succes[i] = new Node;
+    succes[i]->parent = this;
+    succes[i]->cal_level();
+  }
+}
+
+void Node::suppr_node_succes(){
+  for (int i = 0; i < nbSucces; i++){
+    delete succes[i];
+  }
+  supprSucces();
 }
