@@ -43,12 +43,6 @@ void Node::display_arbre(){
     Node::succes[i]->display_arbre();
 }
 
-void Node::initSucces(int _nbSucces){
-  if (succes != ppN_NULL)
-    delete []succes;
-  nbSucces = _nbSucces;
-  succes = new pNode[nbSucces];
-}
 
 void Node::supprSucces(){
   if (succes != ppN_NULL)
@@ -59,12 +53,12 @@ void Node::supprSucces(){
 
 
 void Node::create_succes(int _nbSucces){
-  Node::initSucces(_nbSucces);
-  /*for (int i = 0; i < _nbSucces; i++){
+	Node tmp;
+  for (int i = 0; i < _nbSucces; i++){
     succes[i] = new Node;
     succes[i]->parent = this;
     succes[i]->cal_level();
-  }*/
+  }
 }
 
 void Node::suppr_node_succes(){

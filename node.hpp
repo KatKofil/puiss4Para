@@ -17,7 +17,6 @@ class Node{
       level = 0;
       nbSucces = 0;
       parent = nullptr;
-      succes = nullptr;
     }
 
     ~Node(){
