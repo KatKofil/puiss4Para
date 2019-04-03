@@ -41,7 +41,7 @@ void Node::display_node(){
 void Node::display_arbre(){
   display_node();
   for (int i = 0; i < nbSucces; i++)
-    succes[i]->display_arbre();
+	succes[i]->display_arbre();
 }
 
 
