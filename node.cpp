@@ -53,6 +53,7 @@ void Node::supprSucces(){
 
 void Node::create_succes(int _nbSucces){
 	Node *tmp;
+  this->nbSucces = _nbSucces;
   for (int i = 0; i < _nbSucces; i++){
     tmp->parent = this;
     tmp->cal_level();
