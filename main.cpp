@@ -13,6 +13,7 @@ int main(){
   Node tree;
 
   tree.create_succes(3);
+  tree.display_arbre();
   /*
   while(1){
 		while (collum < 1 || collum > COL){
