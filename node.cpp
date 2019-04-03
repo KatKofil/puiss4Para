@@ -1,7 +1,7 @@
 #include "node.hpp"
 
 void Node::cal_level(){
-  if(parent != pN_NULL)
+  if(parent != nullptr)
     level = parent->level + 1;
   else
     level = 0;
@@ -18,46 +18,45 @@ void Node::Barre(char Car, int nbCar){
 
 void Node::display_node(){
   Barre(' ',2 * level);
-  std::cout << "+ Noeud (" << this << ") :" << std::endl;
-/*Barre(' ',2*Niveau);
-	cout << "  - Niveau = " << Niveau << endl;
-	Barre(' ',2*Niveau);
-	cout << "  - nbSuccesseurs = " << nbSuccesseurs << endl;
-	Barre(' ',2*Niveau);
-	cout << "  - Predecesseur = " << Predecesseur << endl;
-	Barre(' ',2*Niveau);
-	cout << "  - Successeurs[" << nbSuccesseurs  << "] = { ";
-	for(int i=0; i<nbSuccesseurs; i++) {
+  std::cout << "+ Noeud (" << this << ") :" << "\n";
+  Barre(' ',2 * level);
+  std::cout << "  - Niveau = " << level << "\n";
+	Barre(' ',2 * level);
+  std::cout << "  - nbSuccesseurs = " << nbSucces << "\n";
+	Barre(' ',2 * level);
+  std::cout << "  - Predecesseur = " << parent << "\n";
+	Barre(' ',2 * level);
+  std::cout << "  - Successeurs[" << nbSucces  << "] = { "; 
+	for(int i=0; i < nbSucces; i++) {
 		if(i>0) {
-			cout << ", ";
+      std::cout << ", ";
 		}
-		cout << Successeurs[i];
+    std::cout << succes[i]->level;
 	}
-	cout << " }" << endl;
-	cout << endl;*/
+
+  std::cout << " }" << "\n";
+  std::cout << "\n";
 }
 
 void Node::display_arbre(){
   display_node();
   for (int i = 0; i < nbSucces; i++)
-    Node::succes[i]->display_arbre();
+    succes[i]->display_arbre();
 }
 
 
 void Node::supprSucces(){
-  if (succes != ppN_NULL)
-    Node::suppr_node_succes();
   nbSucces = 0;
-  succes = ppN_NULL;
+  succes.clear();
 }
 
 
 void Node::create_succes(int _nbSucces){
-	Node tmp;
+	Node *tmp;
   for (int i = 0; i < _nbSucces; i++){
-    succes[i] = new Node;
-    succes[i]->parent = this;
-    succes[i]->cal_level();
+    tmp->parent = this;
+    tmp->cal_level();
+    succes.push_back(tmp);
   }
 }
 

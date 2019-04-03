@@ -10,7 +10,7 @@ class Node{
     int nbSucces;
     std::byte grid[LINE][COL] = {std::byte{0}};
     Node *parent;
-    std::vector<Node> succes;
+    std::vector<Node *> succes;
 
 
     Node(){
