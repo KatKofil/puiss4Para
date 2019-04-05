@@ -10,7 +10,7 @@ class Node{
     int nbSucces;
     std::byte grid[LINE][COL] = {std::byte{0}};
     Node *parent;
-    std::vector<Node *> succes;
+    std::vector<std::unique_ptr<Node>> succes;
 
 
     Node(){
@@ -19,9 +19,6 @@ class Node{
       parent = nullptr;
     }
 
-    ~Node(){
-      suppr_node_succes();
-    }
     
     void Barre(char Car, int nbCar);
     void display_node();
@@ -29,7 +26,6 @@ class Node{
 
     void create_succes(int _nbSucces);
     void suppr_node_succes();
-    void supprSucces();
 
     void cal_level();
     void define_nbSucces(int _nbSucces);

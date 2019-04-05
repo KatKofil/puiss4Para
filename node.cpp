@@ -45,19 +45,16 @@ void Node::display_arbre(){
 }
 
 
-void Node::supprSucces(){
-  nbSucces = 0;
-  succes.clear();
-}
 
 
 void Node::create_succes(int _nbSucces){
-	Node *tmp;
+  
   this->nbSucces = _nbSucces;
   for (int i = 0; i < _nbSucces; i++){
+  	std::unique_ptr<Node> tmp(new Node);
     tmp->parent = this;
     tmp->cal_level();
-    succes.push_back(tmp);
+    succes.push_back(std::move(tmp));
   }
 }
 
