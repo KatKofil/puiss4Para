@@ -1,4 +1,6 @@
 #include "utils.hpp"
+#include "grille.hpp"
+
 
 class Node;
 
@@ -8,7 +10,7 @@ class Node{
   public:
     int level;
     int nbSucces;
-    std::byte grid[LINE][COL] = {std::byte{0}};
+    plateau etat;
     Node *parent;
     std::vector<std::unique_ptr<Node>> succes;
 
