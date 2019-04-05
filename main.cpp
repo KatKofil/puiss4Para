@@ -1,5 +1,5 @@
 #include "grille.hpp"
-#include "MCTS.hpp"
+#include "minimax.hpp"
 #include "node.hpp"
 
 int main(){
@@ -8,12 +8,17 @@ int main(){
   //std::byte winner;
 	plateau game;
   
-  MCTS bot;
+  Minimax bot;
 
   Node tree;
 
-  tree.create_succes(3);
-  tree.display_arbre();
+  bot.minimax(tree);
+  tree.etat.display();
+  for (int i = 0; i < tree.nbSucces; i++){
+    tree.succes[i]->etat.display();
+  }
+
+  
   /*
   while(1){
 		while (collum < 1 || collum > COL){

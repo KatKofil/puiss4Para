@@ -16,6 +16,7 @@ class plateau{
     std::byte who_win(int acc);
     std::byte verification();
     void upload(std::byte grid[LINE][COL]);
+    std::vector<int> move_dispo(std::byte grid[LINE][COL]);
 
     std::byte player = std::byte{1};
     std::byte grid[LINE][COL] = {std::byte{0}};

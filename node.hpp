@@ -1,10 +1,8 @@
+#ifndef _NODE_HPP_
+#define _NODE_HPP_
+
 #include "utils.hpp"
 #include "grille.hpp"
-
-
-class Node;
-
-
 
 class Node{
   public:
@@ -13,14 +11,6 @@ class Node{
     plateau etat;
     Node *parent;
     std::vector<std::unique_ptr<Node>> succes;
-
-
-    Node(){
-      level = 0;
-      nbSucces = 0;
-      parent = nullptr;
-    }
-
     
     void Barre(char Car, int nbCar);
     void display_node();
@@ -32,3 +22,5 @@ class Node{
     void cal_level();
     void define_nbSucces(int _nbSucces);
 };
+
+#endif

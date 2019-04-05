@@ -1,5 +1,4 @@
 #include "grille.hpp"
-#include "MCTS.hpp"
 
 
 int plateau::play(int x){
