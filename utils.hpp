@@ -5,7 +5,8 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
-
+#include <memory>
+#include <limits>
 #define COL 7
 #define LINE 4
 #define WIN 3
