@@ -12,6 +12,15 @@ class Node{
     Node *parent;
     std::vector<Node *> succes;
 
+    Node(){
+      level = 0;
+      nbSucces = 0;
+      //Les problème se trouve dans les 3 ligne suivante
+      etat(new plateau);
+      parent(new Node);
+      succes(new std::vector);
+    }
+
     void Barre(char Car, int nbCar);
     void display_node();
     void display_arbre();
