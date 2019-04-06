@@ -13,10 +13,11 @@ int main(){
   Node tree;
 
   bot.minimax(tree);
-  tree.etat.display();
-  for (int i = 0; i < tree.nbSucces; i++){
-    tree.succes[i]->etat.display();
-  }
+  //tree.etat.display();
+
+  //for (int i = 0; i < tree.nbSucces; i++){
+  //  tree.succes[i]->etat.display();
+  //}
 
   
   /*

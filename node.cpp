@@ -1,6 +1,7 @@
 #include "node.hpp"
 
 void Node::cal_level(){
+  printf("ici\n");
   if(parent != nullptr)
     level = parent->level + 1;
   else
@@ -51,7 +52,8 @@ void Node::create_succes(int _nbSucces){
   
   this->nbSucces = _nbSucces;
   for (int i = 0; i < _nbSucces; i++){
-  	Node * tmp(new Node);
+    std::cout << i << "\n";
+  	Node * tmp;
     tmp->etat = this->etat;
     tmp->parent = this;
     tmp->cal_level();

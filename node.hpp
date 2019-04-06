@@ -11,7 +11,7 @@ class Node{
     plateau etat;
     Node *parent;
     std::vector<Node *> succes;
-    
+
     void Barre(char Car, int nbCar);
     void display_node();
     void display_arbre();
