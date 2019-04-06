@@ -1,7 +1,6 @@
 #include "node.hpp"
 
 void Node::cal_level(){
-  printf("ici\n");
   if(parent != nullptr)
     level = parent->level + 1;
   else
