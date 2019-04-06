@@ -15,10 +15,9 @@ class Node{
     Node(){
       level = 0;
       nbSucces = 0;
-      //Les problème se trouve dans les 3 ligne suivante
-      etat(new plateau);
-      parent(new Node);
-      succes(new std::vector);
+      etat = plateau();
+      parent = nullptr;
+      succes.push_back(nullptr);
     }
 
     void Barre(char Car, int nbCar);

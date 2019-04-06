@@ -1,6 +1,7 @@
 #include "grille.hpp"
 
 
+
 int plateau::play(int x){
 	int y = LINE - 1;
 	if (grid[y][x] != std::byte{0})
@@ -158,6 +159,7 @@ void plateau:: upload(std::byte grid[LINE][COL]){
 std::vector<int> plateau::move_dispo(std::byte grid[LINE][COL]){
 	std::vector<int> play;
 	for (int i = 0; i < COL; i++){
+    std::cout << "Putin\n";
 		if (grid[LINE - 1][i] == std::byte{0}){
 			play.push_back(i);
 	
