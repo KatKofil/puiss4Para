@@ -51,7 +51,7 @@ void Node::create_succes(int _nbSucces){
   
   this->nbSucces = _nbSucces;
   for (int i = 0; i < _nbSucces; i++){
-  	std::unique_ptr<Node> tmp(new Node);
+  	Node * tmp(new Node);
     tmp->etat = this->etat;
     tmp->parent = this;
     tmp->cal_level();

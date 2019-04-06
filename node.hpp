@@ -10,7 +10,7 @@ class Node{
     int nbSucces;
     plateau etat;
     Node *parent;
-    std::vector<std::unique_ptr<Node>> succes;
+    std::vector<Node *> succes;
     
     void Barre(char Car, int nbCar);
     void display_node();
