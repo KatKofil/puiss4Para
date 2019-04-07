@@ -19,22 +19,20 @@ int Minimax::minimax(Node node, int depth){
   std::vector<int> playout = node.etat.move_dispo(node.etat.grid);
   /*
   node.create_succes(playout.size());
-  for (unsigned int i = 0; i < playout.size(); i++){
-    node.succes[i]->etat.play(playout[i]);
-    node.succes[i]->etat.display();
-    std::cout << "\n\n";
-  }
+ 
 
   node.display_arbre();*/
   std::vector<int> playout_succes;
-  Node *tmp;  
   while(depth > 0){
     node.create_succes(playout.size());
+    for (unsigned int i = 0; i < playout.size(); i++)
+      node.succes[i]->etat.play(playout[i]);
     for(unsigned int i = 0; i < playout_succes.size();i++){
-      tmp = node.succes[i];
       playout_succes.clear();
-      playout_succes = tmp->etat.move_dispo(tmp->etat.grid);
-      tmp->create_succes(playout_succes.size());
+      playout_succes = node.succes[i]->etat.move_dispo(node.succes[i]->etat.grid);
+      node.succes[i]->create_succes(playout_succes.size());
+      for (unsigned int j = 0; j < playout.size(); j++)
+        node.succes[j]->succes[j]->etat.play(playout_succes[j]);
     }
     depth--;
   }
