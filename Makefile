@@ -4,7 +4,7 @@ CC = g++
 
 SRC = grille.cpp minimax.cpp main.cpp node.cpp
 
-FLAGS = -Wall -Werror -Wextra -g -fsanitize=address -std=c++17
+FLAGS = -Wall -Werror -Wextra -g -std=c++17
 
 RM = rm -f
 
