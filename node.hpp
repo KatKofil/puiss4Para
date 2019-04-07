@@ -17,7 +17,7 @@ class Node{
       nbSucces = 0;
       etat = plateau();
       parent = nullptr;
-      succes.push_back(nullptr);
+      succes.clear();
     }
 
     void Barre(char Car, int nbCar);

@@ -50,6 +50,7 @@ void Node::display_arbre(){
 void Node::create_succes(int _nbSucces){
   
   this->nbSucces = _nbSucces;
+  succes.clear();
   for (int i = 0; i < _nbSucces; i++){
   	Node *tmp = new Node;
     tmp->etat.upload(etat.grid);
