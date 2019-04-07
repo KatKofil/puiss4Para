@@ -57,8 +57,10 @@ void Node::create_succes(int _nbSucces){
     tmp->cal_level();
     succes.push_back(tmp);
   }
-  for (int i = 0; i < _nbSucces; i++){
-    succes[i]->etat.display();
+  for (auto it = succes.begin(); it != succes.end(); it++){
+    std::cout << "Bah oui c'est avant\n";
+    std::cout << (*it)->level << "\n";
+    std::cout << "Bah oui c'est avant\n";
   }
 }
 
