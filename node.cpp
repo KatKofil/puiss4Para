@@ -50,18 +50,12 @@ void Node::display_arbre(){
 void Node::create_succes(int _nbSucces){
   
   this->nbSucces = _nbSucces;
-  succes.clear();
   for (int i = 0; i < _nbSucces; i++){
   	Node *tmp = new Node;
     tmp->etat.upload(etat.grid);
     tmp->parent = this;
     tmp->cal_level();
     succes.push_back(tmp);
-  }
-  for (auto it = succes.begin(); it != succes.end(); it++){
-    std::cout << "Bah oui c'est avant\n";
-    std::cout << (*it)->level << "\n";
-    std::cout << "Bah oui c'est avant\n";
   }
 }
 

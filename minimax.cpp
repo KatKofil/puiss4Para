@@ -20,10 +20,12 @@ int Minimax::minimax(Node node){
   std::vector<int> playout = node.etat.move_dispo(node.etat.grid);
   
   node.create_succes(playout.size());
-  node.succes[0]->etat.display();
-  std::cout << "ca passe\n";
   for (unsigned int i = 0; i < playout.size(); i++){
     node.succes[i]->etat.play(playout[i]);
+    node.succes[i]->etat.display();
+    std::cout << "\n\n";
   }
+
+  node.display_arbre();
   return 0;
 }
