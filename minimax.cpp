@@ -16,7 +16,6 @@ int Minimax::best_move(plateau etat, int depth){
 }*/
 
 int Minimax::minimax(Node node, int depth){
-  
   std::vector<int> playout = node.etat.move_dispo(node.etat.grid);
   /*
   node.create_succes(playout.size());
@@ -27,15 +26,18 @@ int Minimax::minimax(Node node, int depth){
   }
 
   node.display_arbre();*/
-
+  std::vector<int> playout_succes;
+  Node *tmp;  
   while(depth > 0){
     node.create_succes(playout.size());
-    std::vector<int> playout_succes = node.etat.move_dispo(node.etat.grid);
-    for(int i = 0; i < playout_succes.size();i++){
-
-      node.succes[i]->create_succes();
+    for(unsigned int i = 0; i < playout_succes.size();i++){
+      tmp = node.succes[i];
+      playout_succes.clear();
+      playout_succes = tmp->etat.move_dispo(tmp->etat.grid);
+      tmp->create_succes(playout_succes.size());
     }
-
+    depth--;
   }
+  node.display_arbre();
   return 0;
 }

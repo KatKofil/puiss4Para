@@ -11,9 +11,7 @@ int main(){
   Minimax bot;
 
   Node tree;
-  tree.create_succes(3);
-  tree.display_arbre();
-  bot.minimax(tree, 2);
+  bot.minimax(tree, 3);
 
   //for (int i = 0; i < tree.nbSucces; i++){
   //  tree.succes[i]->etat.display();
