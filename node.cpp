@@ -51,12 +51,14 @@ void Node::create_succes(int _nbSucces){
   
   this->nbSucces = _nbSucces;
   for (int i = 0; i < _nbSucces; i++){
-    //std::cout << i << "\n";
   	Node *tmp = new Node;
     tmp->etat.upload(etat.grid);
     tmp->parent = this;
     tmp->cal_level();
-    succes.push_back(std::move(tmp));
+    succes.push_back(tmp);
+  }
+  for (int i = 0; i < _nbSucces; i++){
+    succes[i]->etat.display();
   }
 }
 

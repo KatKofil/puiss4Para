@@ -8,12 +8,10 @@ int main(){
   //std::byte winner;
 	plateau game;
   
-  //Minimax bot;
+  Minimax bot;
 
   Node tree;
-  tree.create_succes(3);
-  //bot.minimax(tree);
-  tree.etat.display();
+  bot.minimax(tree);
 
   //for (int i = 0; i < tree.nbSucces; i++){
   //  tree.succes[i]->etat.display();
