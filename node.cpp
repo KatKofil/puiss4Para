@@ -1,5 +1,6 @@
 #include "node.hpp"
 
+
 void Node::cal_level(){
   if(parent != nullptr)
     level = parent->level + 1;
@@ -49,11 +50,11 @@ void Node::display_arbre(){
 
 void Node::create_succes(int _nbSucces){
   
-  std::cout << "Bien sur c'est dans le create\n";
   this->nbSucces = _nbSucces;
   for (int i = 0; i < _nbSucces; i++){
   	Node *tmp = new Node;
     tmp->etat.upload(etat.grid);
+    tmp->etat.player = this->etat.player;
     tmp->parent = this;
     tmp->cal_level();
     succes.push_back(tmp);
@@ -68,3 +69,23 @@ void Node::suppr_node_succes(){
   }
   supprSucces();*/
 }
+
+int Node::create_tree(Node *node){
+  std::vector<int> playout = node->etat.move_dispo(node->etat.grid);
+
+  node->etat.display();
+  if (node->etat.end() == 1 || node->etat.verification() != std::byte{0}){
+    return 0;
+  }
+  else {
+    node->create_succes(playout.size());
+    for (unsigned int i = 0; i < playout.size(); i++){
+      node->succes[i]->etat.play(playout[i]);
+    }
+    for (unsigned int i = 0; i < playout.size(); i++){
+      create_tree(node->succes[i]);
+    }
+  }
+  return 0;
+}
+

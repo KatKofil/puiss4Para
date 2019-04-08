@@ -29,6 +29,8 @@ class Node{
 
     void cal_level();
     void define_nbSucces(int _nbSucces);
+
+    int create_tree(Node *node);
 };
 
 #endif
