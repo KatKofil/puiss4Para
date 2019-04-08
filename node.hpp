@@ -22,12 +22,15 @@ class Node{
       succes.clear();
     }
 
+    ~Node(){
+      
+    }
+
     void Barre(char Car, int nbCar);
     void display_node();
     void display_arbre();
 
     void create_succes(int _nbSucces);
-    void suppr_node_succes();
 
     void cal_level();
 

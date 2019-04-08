@@ -1,6 +1,18 @@
 #include "grille.hpp"
 #include "minimax.hpp"
 #include "node.hpp"
+/*
+void delete_tree(Node *tree){
+  if (tree->succes.size() == 0){
+    delete tree;
+  }
+  else{
+    for (unsigned int i = 0; i < tree->succes.size(); i++){
+      delete_tree(tree->succes[i]);
+    }
+  }
+}
+*/
 
 void create_tree(Node *node){
   std::vector<int> playout = node->etat.move_dispo(node->etat.grid);
@@ -45,8 +57,11 @@ int main(){
   }
 
   //create_tree(&tree);
-  //tree.display_arbre();
-  /*
+  tree.display_arbre();
+  /*while (tree.succes.size() != 0)
+    delete_tree(&tree);
+  
+    
   while(1){
 		while (collum < 1 || collum > COL){
 			std::cout << "Enter a collum : ";

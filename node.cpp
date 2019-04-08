@@ -41,9 +41,6 @@ void Node::display_arbre(){
 	  succes[i]->display_arbre();
 }
 
-
-
-
 void Node::create_succes(int _nbSucces){
   
   this->nbSucces = _nbSucces;
@@ -56,12 +53,3 @@ void Node::create_succes(int _nbSucces){
     succes.push_back(tmp);
   }
 }
-
-
-
-/*void Node::suppr_node_succes(){
-  for (int i = 0; i < nbSucces; i++){
-    delete succes[i];
-  }
-  supprSucces();
-}*/
