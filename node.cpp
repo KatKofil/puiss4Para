@@ -30,7 +30,6 @@ void Node::display_node(){
 		}
     std::cout << succes[i]->level;
 	}
-
   std::cout << " }" << "\n";
   std::cout << "\n";
 }
@@ -42,7 +41,6 @@ void Node::display_arbre(){
 }
 
 void Node::create_succes(int _nbSucces){
-  
   this->nbSucces = _nbSucces;
   for (int i = 0; i < _nbSucces; i++){
   	Node *tmp = new Node;

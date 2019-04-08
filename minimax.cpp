@@ -14,6 +14,7 @@ int Minimax::best_move(plateau etat, int depth){
 
 
 }*/
+
 /*
 int Minimax::minimax(Node *node, int depth){ 
   std::vector<Node *> pile;

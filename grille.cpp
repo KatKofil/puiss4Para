@@ -17,7 +17,6 @@ int plateau::play(int x){
 		}
 		y--;
 	}
-   // cas ou la colone est vide (premier pion de la colone)
 	grid[0][x] = player;
 	player = ~player;
 	last_x = x;
