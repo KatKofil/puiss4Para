@@ -7,7 +7,7 @@
 #include <cstring>
 #include <memory>
 #include <limits>
-#define COL 7
+#define COL 3
 #define LINE 4
 #define WIN 3
 #define ITE 1000

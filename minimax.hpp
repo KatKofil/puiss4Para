@@ -7,8 +7,9 @@
 
 class Minimax{
   public:
-    int best_move(plateau grid, int deth);
-    int minimax(Node *node, int depth);
+   // int best_move(plateau grid, int deth);
+    //int minimax(Node *node, int depth);
+    int minimax(Node *node,int depth);
 };
 
 #endif
