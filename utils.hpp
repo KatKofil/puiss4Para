@@ -9,7 +9,7 @@
 #include <thread>
 #include <future>
 #include <limits>
-#define COL 3
+#define COL 4
 #define LINE 4
 #define WIN 3
 #define ITE 1000

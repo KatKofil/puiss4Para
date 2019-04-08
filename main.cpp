@@ -45,8 +45,16 @@ int main(){
   lauch_thread(playout.size(), tree.succes, &toJoin);
   for (unsigned int i = 0; i < tree.succes.size(); i++){
     toJoin[i].join();
-  } 
-  tree.display_arbre();
+  }
+
+  //create_tree(&tree);
+
+
+
+
+
+
+  //tree.display_arbre();
   //for (int i = 0; i < tree.nbSucces; i++){
   //  tree.succes[i]->etat.display();
   //}
