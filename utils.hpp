@@ -6,6 +6,8 @@
 #include <vector>
 #include <cstring>
 #include <memory>
+#include <thread>
+#include <future>
 #include <limits>
 #define COL 3
 #define LINE 4

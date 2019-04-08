@@ -7,6 +7,7 @@
 class Node{
   public:
     int level;
+    int heuri;
     int nbSucces;
     plateau etat;
     Node *parent;
@@ -15,6 +16,7 @@ class Node{
     Node(){
       level = 0;
       nbSucces = 0;
+      heuri = 0;
       etat = plateau();
       parent = nullptr;
       succes.clear();
@@ -30,7 +32,6 @@ class Node{
     void cal_level();
     void define_nbSucces(int _nbSucces);
 
-    int create_tree(Node *node);
 };
 
 #endif

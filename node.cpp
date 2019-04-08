@@ -69,23 +69,3 @@ void Node::suppr_node_succes(){
   }
   supprSucces();*/
 }
-
-int Node::create_tree(Node *node){
-  std::vector<int> playout = node->etat.move_dispo(node->etat.grid);
-
-  node->etat.display();
-  if (node->etat.end() == 1 || node->etat.verification() != std::byte{0}){
-    return 0;
-  }
-  else {
-    node->create_succes(playout.size());
-    for (unsigned int i = 0; i < playout.size(); i++){
-      node->succes[i]->etat.play(playout[i]);
-    }
-    for (unsigned int i = 0; i < playout.size(); i++){
-      create_tree(node->succes[i]);
-    }
-  }
-  return 0;
-}
-
