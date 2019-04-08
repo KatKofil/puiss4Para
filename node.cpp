@@ -8,10 +8,6 @@ void Node::cal_level(){
     level = 0;
 }
 
-void Node::define_nbSucces(int _nbSucces){
-  nbSucces = _nbSucces;
-}
-
 void Node::Barre(char Car, int nbCar){
   for (int i = 0; i < nbCar; i++)
     std::cout << Car;
@@ -63,9 +59,9 @@ void Node::create_succes(int _nbSucces){
 
 
 
-void Node::suppr_node_succes(){
-/*  for (int i = 0; i < nbSucces; i++){
+/*void Node::suppr_node_succes(){
+  for (int i = 0; i < nbSucces; i++){
     delete succes[i];
   }
-  supprSucces();*/
-}
+  supprSucces();
+}*/

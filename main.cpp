@@ -27,17 +27,14 @@ void lauch_thread(unsigned int nb_thread, std::vector<Node *> succes, std::vecto
 
 int main(){
 	
-	//int collum = 0;
-  //std::byte winner;
 	plateau game;
   std::vector<int> playout;
+
   std::vector<std::thread> toJoin;
-  //Minimax bot;
 
   Node tree;
   //create_tree(&tree);
   playout = tree.etat.move_dispo(tree.etat.grid);
-  //bot.minimax(&tree, 0);
   tree.create_succes(playout.size());
   for (unsigned int i = 0; i < playout.size(); i++){
     tree.succes[i]->etat.play(playout[i]);
@@ -48,18 +45,7 @@ int main(){
   }
 
   //create_tree(&tree);
-
-
-
-
-
-
   //tree.display_arbre();
-  //for (int i = 0; i < tree.nbSucces; i++){
-  //  tree.succes[i]->etat.display();
-  //}
-
-  
   /*
   while(1){
 		while (collum < 1 || collum > COL){

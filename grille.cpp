@@ -151,8 +151,6 @@ std::byte plateau::verification(){
 	return std::byte{0};
 }
 void plateau:: upload(std::byte grid[LINE][COL]){
-		//std::byte copie[LINE][COL];
-
 	memcpy(this->grid,grid,sizeof(std::byte[LINE][COL]));
 }
 

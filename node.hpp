@@ -30,7 +30,6 @@ class Node{
     void suppr_node_succes();
 
     void cal_level();
-    void define_nbSucces(int _nbSucces);
 
 };
 
