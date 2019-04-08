@@ -38,8 +38,8 @@ int Minimax::minimax(Node *node, int depth){
 }
 */
 
-
-int minimax(Node *node,int depth){
+/*
+int minimax(Node *node,//int depth){
   int value;
   if(int(node->etat.who_win(WIN))){
     return int(node->etat.who_win(WIN));
@@ -49,7 +49,7 @@ int minimax(Node *node,int depth){
   if(node->etat.player == std::byte{1}){
     value = std::numeric_limits<int>::min();
     for(int i = 0; i < node->nbSucces;i++){
-      std::max(value,minimax(node->succes,depth - 1,false));
+      //std::max(value,minimax(node->nbSucces,depth - 1,false));
     }
     return value;
   }
@@ -58,11 +58,11 @@ int minimax(Node *node,int depth){
   }
 
   for(int i = 0; i < node->nbSucces;i++){
-      std::min(value,minimax(node->succes,depth - 1,true));
+      //std::min(value,minimax(node->nbSucces,depth - 1,true));
     }
     return value;
   }
-
+*/
 
 
 
