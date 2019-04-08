@@ -49,6 +49,7 @@ void Node::display_arbre(){
 
 void Node::create_succes(int _nbSucces){
   
+  std::cout << "Bien sur c'est dans le create\n";
   this->nbSucces = _nbSucces;
   for (int i = 0; i < _nbSucces; i++){
   	Node *tmp = new Node;
