@@ -23,11 +23,11 @@ int Minimax::minimax(Node *node, int depth){
   while(depth > 0){
     auto it = pile.end();
     std::cout << "Bien sur c'est apres\n";
-    playout = (*it)->etat.move_dispo((*it)->etat.grid);
+    playout = (*it)->etat.move_dispo(&((*it)->etat.grid));
     (*it)->create_succes(playout.size());
     for(unsigned int i = 0; i < playout.size();i++){
       playout.clear();
-      playout = (*it)->succes[i]->etat.move_dispo((*it)->succes[i]->etat.grid);
+      playout = (*it)->succes[i]->etat.move_dispo(&((*it)->succes[i]->etat.grid));
       (*it)->succes[i]->create_succes(playout.size());
     }
     for (unsigned int j = 0; j < playout.size(); j++)

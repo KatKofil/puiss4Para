@@ -158,8 +158,9 @@ void plateau:: upload(std::byte grid[LINE][COL]){
 
 std::vector<int> plateau::move_dispo(std::byte grid[LINE][COL]){
 	std::vector<int> play;
+  
 	for (int i = 0; i < COL; i++){
-		if (grid[LINE - 1][i] == std::byte{0}){
+		if (grid[LINE - 1][if] == std::byte{0}){
 			play.push_back(i);	
 		}
 	}
